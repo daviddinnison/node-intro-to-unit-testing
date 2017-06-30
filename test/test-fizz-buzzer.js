@@ -30,11 +30,13 @@ describe.only('fizzBuzz', function() {
 			fizzBuzz(i).should.equal(i);
 		});
 	});
-	it.only('should not work with negative numbers and decimals', function() {
-		let arrayOfFizzBuzz = [-5, 1.5];
+	it('should not work with negative numbers and decimals', function() {
+		let arrayOfFizzBuzz = [true, false, -3];
 		arrayOfFizzBuzz.forEach(function(i) {
-			fizzBuzz(i).should.throwError(error);
-		}).should.throwError(error);
+			(function() {
+				fizzBuzz(i)
+			}).should.throw(Error);
+		});
 	});
 });
 

@@ -2,6 +2,9 @@ module.exports = function(num) {
 	if (typeof num !== 'number') {
 		throw Error('`num` must be a number');
 	}
+	if (num < 0) {
+		throw Error('`num` must be a positive number');
+	}
 	if (num % 15 === 0) {
 		return 'fizz-buzz';
 	}
